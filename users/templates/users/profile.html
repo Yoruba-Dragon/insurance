@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>User Profile</h1>
+        <table class="profile-table">
+            <tr>
+                <th>First Name:</th>
+                <td>{{ user.first_name }}</td>
+            </tr>
+            <tr>
+                <th>Last Name:</th>
+                <td>{{ user.last_name }}</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone:</th>
+                <td>{{ profile.phone }}</td>
+            </tr>
+            <tr>
+                <th>Address:</th>
+                <td>{{ profile.address }}</td>
+            </tr>
+        </table>
+        <div class="actions">
+            <a href="{% url 'edit_profile' %}" class="btn btn-edit">Edit Profile</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Policy</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Delete Policy</h1>
+        <p>Are you sure you want to delete the policy "<strong>{{ policy.policy_name }}</strong>" (Policy Number: {{ policy.policy_number }})?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-delete">Yes, Delete</button>
+            <a href="{% url 'policy_list' %}" class="btn btn-cancel">No, Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
